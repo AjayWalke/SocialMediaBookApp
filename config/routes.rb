@@ -7,4 +7,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get 'like/inc'
+  get 'comment/create'
+  get 'comment/getAll'
+  get 'post/create'
+  get 'post/index'
+  get 'user/create'
+  get 'user/index'
 end

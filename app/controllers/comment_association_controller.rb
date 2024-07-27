@@ -1,0 +1,2 @@
+class CommentAssociationController < ApplicationController
+end

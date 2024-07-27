@@ -1,0 +1,2 @@
+class LikeAssociationController < ApplicationController
+end

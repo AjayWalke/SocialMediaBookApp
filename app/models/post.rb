@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comment_associations
   has_many :comments, through: :comment_associations
-  has_many :like_associations
+  has_many :like_associations, as: :associate
   has_many :likes, through: :like_associations
   
   validates :user_id, presence: true
@@ -11,7 +11,7 @@ class Post < ApplicationRecord
 
   def self.user_posts_details(user_id:)
     Post
-      .joins(like_association: :like)
+      .joins(like_associations: :like)
       .where(
         posts: { user_id: user_id }
       )

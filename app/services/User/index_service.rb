@@ -1,8 +1,8 @@
 class User::IndexService < ApplicationService
   def initialize(params:)
-    super
+    super()
 
-    @email = params.dig(:params)
+    @email = params.dig(:email)
     @password = params.dig(:password)
   end
 
@@ -11,8 +11,8 @@ class User::IndexService < ApplicationService
         init_and_validate_user
         result.update(
             success: true,
-            message: 'User Fetched Successfully'
-            data: @user
+            message: 'User Fetched Successfully',
+            user: @user
         )
     rescue => error
         result.update(
@@ -26,7 +26,9 @@ class User::IndexService < ApplicationService
   private
 
   def init_and_validate_user
-    @user = User.find_by(email: email)
+    @user = User.find_by(email: @email)
     raise 'Invalid User and Password' unless @user.present?
+
+    raise 'Invalid Password' unless @password.eql?(@user.password)
   end
 end

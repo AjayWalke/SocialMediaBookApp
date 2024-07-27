@@ -1,6 +1,6 @@
 class Like::IncService < ApplicationService
   def initialize(payload:)
-    super
+    super()
 
     @like_id = payload.dig(:like_id)
   end
@@ -26,10 +26,13 @@ class Like::IncService < ApplicationService
   private
 
   def validate_payload
-    @like = Like.find(id: like_id)
-    raise 'Invalid Like' unless like.present?
+    @like = Like.find(@like_id)
+    raise 'Invalid Like' unless @like.present?
+
+    @prev_count = @like.count
   end
 
   def increase_like_count
-    @like.update!(count: count+1)
+    @like.update!(count: @prev_count+1)
+  end
 end

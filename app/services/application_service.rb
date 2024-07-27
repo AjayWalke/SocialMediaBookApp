@@ -2,7 +2,9 @@ class ApplicationService
   attr_accessor :result
 
   def initialize
-    @result = OpenStruct.new(success: false, message: nil)
+    @result = Hash.new
+    @result[:success] = false
+    @result[:message] = 'Please Try again after some time'
   end
 
   def self.call(**args)

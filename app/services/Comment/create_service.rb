@@ -12,7 +12,7 @@ class Comment::CreateService < ApplicationService
     begin
       validate_post_details
       create_new_comment
-      create_new_comment_association
+      create_new_comment_association if @post_id.present?
       create_new_like
       create_new_like_association
 

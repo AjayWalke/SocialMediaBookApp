@@ -41,6 +41,9 @@ Below are the necessary API routes and there format:
 ##### POST : http://127.0.0.1:3000/api/v0/comments
 ![Screenshot 2024-07-27 183758](https://github.com/user-attachments/assets/59917764-4536-43de-9bb1-62a629ad89db)
 
+##### http://127.0.0.1:3000/api/v0/comments/child-comment?parent_id=3
+![Screenshot 2024-07-27 205542](https://github.com/user-attachments/assets/27ab16d7-2027-401c-8d82-cdffadd772a9)
+
 * Database creation
 
 * Database initialization

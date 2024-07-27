@@ -7,11 +7,23 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get 'like/inc'
-  get 'comment/create'
-  get 'comment/getAll'
-  get 'post/create'
-  get 'post/index'
-  get 'user/create'
-  get 'user/index'
+  
+
+  # version v0 api's
+  namespace :api do
+    namespace :v0 do
+      resources :users, only: [:create, :index]
+      resources :posts, only: [:create, :index]
+      resources :comments, only: [:create, :index] do
+        collection do
+          get 'get_all', action: :getAll
+        end
+      end
+      resources :likes, only: [] do
+        collection do
+          get 'inc', action: :inc
+        end
+      end
+    end
+  end
 end

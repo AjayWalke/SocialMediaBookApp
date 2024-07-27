@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_27_040525) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_27_043758) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_27_040525) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_comments_on_parent_id"
+  end
+
+  create_table "like_associations", force: :cascade do |t|
+    t.string "associate_type", null: false
+    t.integer "associate_id", null: false
+    t.integer "like_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["associate_type", "associate_id"], name: "index_like_associations_on_associate_type_and_associate_id"
+    t.index ["like_id"], name: "index_like_associations_on_like_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -54,9 +64,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_27_040525) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "comment_associations", "comments"
   add_foreign_key "comment_associations", "posts"
+  add_foreign_key "like_associations", "likes"
   add_foreign_key "posts", "users"
 end

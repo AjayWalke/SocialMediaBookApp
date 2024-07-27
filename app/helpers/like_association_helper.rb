@@ -1,0 +1,2 @@
+module LikeAssociationHelper
+end

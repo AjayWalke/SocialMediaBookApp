@@ -9,6 +9,7 @@ class User::IndexService < ApplicationService
   def execute
     begin
         init_and_validate_user
+
         result.update(
             success: true,
             message: 'User Fetched Successfully',

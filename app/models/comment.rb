@@ -8,16 +8,47 @@ class Comment < ApplicationRecord
 
   def self.all_comments_of_post(post_id:)
     Comment
-     .joins(:comment_association)
-     .joins(like_associations: :like)
-     .where(
-      comment_association: { post_id: post_id }
-     )
-     .select(
-      'comments.*',
-      'comment_association.post_id',
-      'likes.count as like_count'
-     )
+      .joins(:comment_association)
+      .joins(like_associations: :like)
+      .joins("LEFT JOIN comments AS child_comments ON comments.id = child_comments.parent_id")
+      .where(
+       comment_association: { post_id: post_id }
+      )
+      .select(
+       'comments.id',
+       'comments.parent_id',
+       'comments.comment_msg',
+       'comments.date_of_post',
+       'comment_association.post_id',
+       'likes.count as like_count',
+       'COUNT(child_comments.id) AS child_comments_count'
+      )
+      .group(
+        "comments.id",
+        "comment_association.post_id",
+        "likes.count"
+      )
+      .order(:date_of_post)
+  end
+
+  def self.fetch_child_comments(parent_id:)
+    Comment
+      .joins("LEFT JOIN comments AS child_comments ON comments.id = child_comments.parent_id")
+      .where(parent_id: parent_id)
+      .order(:date_of_post)
+      .select(
+        'comments.id',
+        'comments.parent_id',
+        'comments.comment_msg',
+        'comments.date_of_post',
+        'COUNT(child_comments.id) AS child_comments_count'
+      )
+      .group(:id)
+      .order(:date_of_post)
+  end
+
+  def self.total_count_of_child_comments(comment_id:)
+    Comment.where(parent_id: comment_id).count || 0
   end
 end
   

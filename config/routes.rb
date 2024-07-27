@@ -16,7 +16,8 @@ Rails.application.routes.draw do
       resources :posts, only: [:create, :index]
       resources :comments, only: [:create, :index] do
         collection do
-          get 'get_all', action: :getAll
+          get 'get-all', action: :get_all
+          get 'child-comment', action: :child_comment
         end
       end
       resources :likes, only: [] do

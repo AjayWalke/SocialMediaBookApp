@@ -1,6 +1,6 @@
 class User::CreateService < ApplicationService
   def initialize(payload:)
-    super
+    super()
 
     @username = payload.dig(:username)
     @email = payload.dig(:email)
@@ -45,9 +45,9 @@ class User::CreateService < ApplicationService
   end
 
   def validate_params
-    raise 'Invalid username' if @username.present?
-    raise 'Invalid email' if @email.present?
-    raise 'Invalid address' if @address.present?
-    raise 'Invalid name' if @name.present?
+    raise 'Invalid username' unless @username.present?
+    raise 'Invalid email' unless @email.present?
+    raise 'Invalid address' unless @address.present?
+    raise 'Invalid name' unless @name.present?
   end
 end

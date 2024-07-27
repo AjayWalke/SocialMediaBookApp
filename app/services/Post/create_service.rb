@@ -1,6 +1,6 @@
 class Post::CreateService < ApplicationService
   def initialize(payload:)
-    super
+    super()
 
     @user_id = payload.dig(:user_id)
     @date_of_post = payload.dig(:date_of_post)
@@ -31,7 +31,7 @@ class Post::CreateService < ApplicationService
   private
 
   def validate_post_details
-    @user = User.find(id: @user_id)
+    @user = User.find(@user_id)
     raise 'Invalid User' unless @user.present?
 
     raise 'Empty Post Can\'t be Added' unless validate_payload
@@ -57,7 +57,6 @@ class Post::CreateService < ApplicationService
       associate_type: Post.name,
       associate_id: @post.id,
       like_id: @like.id
-
     )
   end
 

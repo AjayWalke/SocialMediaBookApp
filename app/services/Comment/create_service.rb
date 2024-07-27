@@ -1,6 +1,6 @@
 class Comment::CreateService < ApplicationService
   def initialize(payload:)
-    super
+    super()
 
     @parent_id = payload.dig(:parent_id)
     @comment_msg = payload.dig(:comment_msg)
@@ -33,8 +33,10 @@ class Comment::CreateService < ApplicationService
   private
 
   def validate_post_details
-    @post = Post.find(id: @post_id)
+    @post = Post.find(@post_id)
     raise 'Invalid Post' unless @post.present?
+
+    raise 'Invalid Comment Msg' unless @comment_msg.present?
   end
 
   def create_new_comment
@@ -48,7 +50,7 @@ class Comment::CreateService < ApplicationService
   def create_new_comment_association
     @comment_association = CommentAssociation.create!(
       post_id: @post_id,
-      comment_id: @comment_id
+      comment_id: @comment.id
     )
   end
   

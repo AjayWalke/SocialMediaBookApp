@@ -1,6 +1,6 @@
 class Post::IndexService < ApplicationService
   def initialize(params:)
-    super
+    super()
 
     @user_id = params.dig(:user_id)
   end
@@ -27,7 +27,7 @@ class Post::IndexService < ApplicationService
   private
 
   def validate_params
-    @user.find(id: @user_id)
+    @user = User.find(@user_id)
     raise 'Invalid User' unless @user.present?
   end
 

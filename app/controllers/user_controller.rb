@@ -34,5 +34,5 @@ class UserController < ApplicationController
   end
 end
 
-# payload = {username: 'testuser', email: 'test@example.com', address: 'test', password: 'password'}
+# payload = {username: 'test User', email: 'test@example.com', address: 'test', password: 'password', name: 'test1'}
 # params = {email: 't1@email.com', password: '12345'}

@@ -1,6 +1,6 @@
 class Comment::GetAllService < ApplicationService
   def initialize(params:)
-    super
+    super()
 
     @post_id = params.dig(:post_id)
   end
@@ -27,7 +27,7 @@ class Comment::GetAllService < ApplicationService
   private
 
   def validate_params
-    @post = Post.find(id: @post_id)
+    @post = Post.find(@post_id)
     raise 'Invalid Post' unless @post.present?
   end
 

@@ -1,0 +1,10 @@
+.navbar_container {
+  width: 100%;
+  height: 5%;
+}
+
+.children_container {
+  width: 100%;
+  height: 95%;
+  background-color: white;
+}

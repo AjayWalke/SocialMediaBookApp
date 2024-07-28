@@ -1,6 +1,7 @@
 nav {
-  background-color: #333;
-  padding: 1em;
+  background-color: #c3bbbb;
+  padding: 1em 0em 1em 1em;
+  position: relative;
 }
 
 ul {
@@ -15,8 +16,32 @@ li {
   margin: 0;
 }
 
+.leftLogoNav, .leftNav, .rightNav {
+  display: flex;
+  align-items: center;
+}
+
+.leftLogoNav {
+  margin-left: 120px;
+  margin-right: 110px;
+}
+
+.leftNav {
+  flex-grow: 2;
+  margin-left: 20px;
+}
+
+.leftNav li {
+  margin-right: 40px; 
+}
+
+.rightNav {
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
 a {
-  color: white;
+  color: rgb(14, 13, 13);
   text-decoration: none;
 }
 

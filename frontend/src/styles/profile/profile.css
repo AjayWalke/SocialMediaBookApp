@@ -1,0 +1,36 @@
+.profile_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.image_container {
+  display: flex;
+  flex-direction: column;
+  width: 500%;
+  height: 500%;
+  justify-content: center;
+  margin-left: 30%;
+}
+
+.details_container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30%;
+  margin-top: 3%;
+  width: 500%;
+  height: 600%;
+}
+
+.main_container3 {
+  align-items: center;
+  background-color: cornsilk;
+}
+
+.profile_image {
+  color: white;
+}
+
+.profile_name {
+  font-weight: bold;
+}

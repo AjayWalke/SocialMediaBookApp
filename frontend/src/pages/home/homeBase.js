@@ -1,31 +1,42 @@
+"use client";
 import Post from "@/models/post";
 import "../../styles/homeContainer/homeContainer.css"
 import Upload from "@/models/upload";
 import PostButton from "@/ui/postButton/postButton";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import {
+  getAllPost
+} from "../../api/post/post"
 
 export default function HomeBase() {
-  const examplePost = [
-    {
-      userName: "Ajay Walke",
-      message: "This is an example post message.",
-      postImage: "https://farm7.staticflickr.com/6089/6115759179_86316c08ff_z_d.jpg",
-      comments: ["Nice post!", "Great job!"],
-      likes: 20,
-    },
-    {
-      userName: "Ajay Walke",
-      message: "This is an example post message.",
-      postImage: "https://farm7.staticflickr.com/6089/6115759179_86316c08ff_z_d.jpg",
-      comments: ["Nice post!", "Great job!"],
-      likes: 20,
+  const userData = useSelector((state) => state.user.user)
+  const router = useRouter();
+  const [examplePost, setExamplePost] = useState([]);
+  console.log(examplePost)
+  
+  const fetch = async () => {
+    const user_id = userData?.id;
+    const posts = await getAllPost({ user_id })
+    console.log(posts)
+    setExamplePost(posts)
+  }
+
+  useEffect(() => {
+    if(!userData) {
+      router.push('/')
+      return;
     }
-  ]
+
+    fetch()
+  }, [])
 
   return (
     <div className="homeBaseContainer">
       {
-        examplePost.map((post, index) => (
-          <Post {...post}/>
+        examplePost.length > 0 && examplePost.map((post) => (
+          <Post post={post}/>
         ))
       }
       <div>

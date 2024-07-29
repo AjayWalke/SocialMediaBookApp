@@ -13,7 +13,7 @@ class Comment::GetAllService < ApplicationService
       result.update(
         success: true,
         message: 'All Comments Fetched Successfully',
-        comments: @comments
+        data: @comments
       )
     rescue => error
       result.update(

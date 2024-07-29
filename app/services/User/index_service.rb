@@ -13,7 +13,7 @@ class User::IndexService < ApplicationService
         result.update(
             success: true,
             message: 'User Fetched Successfully',
-            user: @user
+            data: @user
         )
     rescue => error
         result.update(

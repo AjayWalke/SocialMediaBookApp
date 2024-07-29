@@ -12,11 +12,14 @@ class Post < ApplicationRecord
   def self.user_posts_details(user_id:)
     Post
       .joins(like_associations: :like)
+      .joins(:user)
       .where(
         posts: { user_id: user_id }
       )
       .select(
         'posts.*',
+        'users.username',
+        'likes.id as like_id',
         'likes.count as like_count'
       )
   end

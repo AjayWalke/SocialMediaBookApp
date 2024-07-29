@@ -26,6 +26,7 @@ class Comment < ApplicationRecord
       .group(
         "comments.id",
         "comment_association.post_id",
+        "likes.id as like_id",
         "likes.count"
       )
       .order(:date_of_post)

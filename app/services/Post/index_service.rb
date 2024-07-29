@@ -13,7 +13,7 @@ class Post::IndexService < ApplicationService
       result.update(
         success: true,
         message: 'Posts Fetched Successfully',
-        posts: @posts
+        data: @posts
       )
     rescue => error
       result.update(

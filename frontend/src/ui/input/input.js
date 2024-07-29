@@ -8,7 +8,7 @@ export default function Input({ name, placeholder, type, setValue}) {
         className="input_box_container"
         placeholder={placeholder}
         type={type}
-        onChange={(e) => setValue(e)}
+        onChange={(e) => setValue(e.target.value)}
       />
     </div>
   )

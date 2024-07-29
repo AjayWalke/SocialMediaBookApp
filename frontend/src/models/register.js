@@ -4,6 +4,10 @@ import { useState } from "react";
 import "../styles/post/createNewPost.css";
 import Input from "@/ui/input/input";
 import "../styles/mainHome.css";
+import {
+  sendNewRegistration
+} from "../api/main_home/mainHome"
+import { useRouter } from "next/navigation";
 
 export default function Register({ setState }) {
   const [username, setUsername] = useState('');
@@ -12,9 +16,15 @@ export default function Register({ setState }) {
   const [password, setPassword] = useState('');
   const [reenteredPassword, setReenteredPassword] = useState('');
   const [email, setEmail] = useState('');
+  const router = useRouter();
 
-  const handleRegister = () => {
-    
+  const handleRegister = async () => {
+    if(password !== reenteredPassword) {
+      alert('Password Didn\'t match')
+    }
+
+    sendNewRegistration({username, name, address, email, password})
+    window.location.reload();
   };
 
   return (

@@ -6,7 +6,6 @@ module Api
       skip_before_action :verify_authenticity_token
 
       def create
-        debugger
         result = User::CreateService.new(
           payload: @payload
         ).execute
@@ -25,7 +24,6 @@ module Api
       private
 
       def set_payload
-        debugger
         @payload = params.permit(:username, :email, :address, :password, :name).to_h
       end
 

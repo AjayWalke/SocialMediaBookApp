@@ -25,7 +25,7 @@ module GoogleDriveService
       service
     end
     def self.get_web_link(file_id)
-      "https://drive.google.com/file/d/#{file_id}/view?usp=sharing"
+      "https://drive.google.com/thumbnail?id=#{file_id}"
     end
 
     def self.upload_file_to_drive(file_path, folder_id = DEFAULT_FOLDER)

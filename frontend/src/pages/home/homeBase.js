@@ -1,5 +1,7 @@
 import Post from "@/models/post";
 import "../../styles/homeContainer/homeContainer.css"
+import Upload from "@/models/upload";
+import PostButton from "@/ui/postButton/postButton";
 
 export default function HomeBase() {
   const examplePost = [
@@ -26,6 +28,9 @@ export default function HomeBase() {
           <Post {...post}/>
         ))
       }
+      <div>
+        <PostButton/>
+      </div>
     </div>
   );
 }

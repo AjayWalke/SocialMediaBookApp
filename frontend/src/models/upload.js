@@ -27,8 +27,8 @@ export default function Upload() {
 
       const result = await response.json();
 
-      if (response.success) {
-        setMessage(`File uploaded successfully. Folder link: ${result.folderLink}`);
+      if (result?.success) {
+        setMessage(`File uploaded successfully`);
       } else {
         setMessage(`Error: ${result.message}`);
       }

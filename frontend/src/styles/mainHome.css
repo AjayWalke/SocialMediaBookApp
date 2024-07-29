@@ -1,0 +1,47 @@
+.login_container {
+  justify-content: center;
+}
+
+.main_home_container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.main_home_app_logo_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.main_home_app_page_container {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.hover_underline {
+  margin-top: 20px;
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.hover_underline:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+  text-align: center;
+}
+

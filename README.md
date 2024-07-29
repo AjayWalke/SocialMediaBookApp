@@ -49,6 +49,13 @@ Below are the necessary API routes and there format:
 * Database initialization
 
 * How to run the test suite
+rails generate migration AddColumnToTable
+rails generate controller name
+rails db:create
+rails new app
+rails generate data_migration AddDataToTable
+rails s
+rails db:migrate
 
 * Services (job queues, cache servers, search engines, etc.)
 

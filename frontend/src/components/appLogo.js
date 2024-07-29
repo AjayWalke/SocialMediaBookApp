@@ -1,11 +1,16 @@
 import Link from "next/link";
 import Logo from "../ui/app_logo.svg"
+import Image from 'next/image';
 
 export default function AppLogo() {
   return (
     <div>
-      <img src="https://www.clipartmax.com/png/middle/285-2859261_social-media-icons-logos-social-media-apps-png.png"></img>
-      {/* <Logo/>   */}
+      <Image
+        src={Logo}
+        width={800}
+        height={600}
+      />
+      <div style={{marginLeft: '300px'}}><i><b>It's Time For New Media Platform</b></i></div>
     </div>
   );
 }

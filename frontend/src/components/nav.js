@@ -1,15 +1,28 @@
 import Link from "next/link";
 import "../styles/navBar/navBar.css"
-import AppLogo from "../components/appLogo";
+import Image from 'next/image';
+import Logo from "../ui/app_logo.svg"
+import Logout from "../ui/logout-icon.svg"
 
 export default function Nav() {
+  const name = "Ajay Walke"
+
+  const handleLogout = () => {
+
+  }
+
   return (
     <nav>
       <ul>
         <div className="leftLogoNav">
           <li>
-            <AppLogo/>
+            <Image 
+              src={Logo}
+              width={60}
+              height={60}
+            />
           </li>
+          <span><b>Social Media Book App</b></span>
         </div>
         <div className="leftNav">
           <li>
@@ -23,9 +36,10 @@ export default function Nav() {
           </li>
         </div>
         <div className="rightNav">
-          <li>
-            <p className="profile_window">UserDetails</p>
-          </li>
+          <div className="sub_rightNav">
+            <span>Hi, {name}! </span>
+            <div className="image"><Image src={Logout} width={40} height={40}/></div>
+          </div>
         </div>
       </ul>
     </nav>

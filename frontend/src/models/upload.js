@@ -11,31 +11,30 @@ export default function Upload() {
   };
 
   const handleUpload = async () => {
-    console.log('hello')
-    // if (!file) {
-    //   setMessage('Please select a file.');
-    //   return;
-    // }
+    if (!file) {
+      setMessage('Please select a file.');
+      return;
+    }
 
-    // const formData = new FormData();
-    // formData.append('file', file);
+    const formData = new FormData();
+    formData.append('file', file);
 
-    // try {
-    //   const response = await fetch('http://localhost:3000/upload', {
-    //     method: 'POST',
-    //     body: formData,
-    //   });
+    try {
+      const response = await fetch('http://localhost:3000/api/v0/upload/image', {
+        method: 'POST',
+        body: formData,
+      });
 
-    //   const result = await response.json();
+      const result = await response.json();
 
-    //   if (response.ok) {
-    //     setMessage(`File uploaded successfully. Folder link: ${result.folderLink}`);
-    //   } else {
-    //     setMessage(`Error: ${result.message}`);
-    //   }
-    // } catch (error) {
-    //   setMessage(`Error: ${error.message}`);
-    // }
+      if (response.success) {
+        setMessage(`File uploaded successfully. Folder link: ${result.folderLink}`);
+      } else {
+        setMessage(`Error: ${result.message}`);
+      }
+    } catch (error) {
+      setMessage(`Error: ${error.message}`);
+    }
   };
 
   return (

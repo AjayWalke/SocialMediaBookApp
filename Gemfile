@@ -42,7 +42,8 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # To use google services
-gem 'google-api-client', '~> 0.53.0'
+gem 'google_drive'
+gem 'google-apis-drive_v3'
 gem 'dotenv-rails', groups: [:development, :test, :production]
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

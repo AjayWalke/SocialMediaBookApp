@@ -25,7 +25,12 @@ Rails.application.routes.draw do
           get 'inc', action: :inc
         end
       end
+
+      # To create a upload of images
+      namespace :upload, path: 'upload' do
+        post '/image', action: :upload_image
+      end
     end
+    
   end
-  
 end

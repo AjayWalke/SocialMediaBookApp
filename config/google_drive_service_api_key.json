@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "socialmediabookapp",
+  "private_key_id": "bb02fe7aedcf92251c66f8c9076d6eeef8cc11df",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCu7b8fpvrPk4zf\npkuHyFPYTvWKuM3hpm6VNJJZjzJG+yNjCSQW6lyEMS9hXVgVg9ciHIdADivDZHoS\n0pGS7y7EzcPCr+Ra4imHiZOTUNOwWzal5lKVUf+cXIl64/3Qhxzt9kCCKuStjpd5\nE8COyNAjxKK2HW945kHnICwiQT+rfsf4ZiB7Y5na+4SGaK0P1FwZYbYQ0xZC88mU\nGvEvz/bDYDwdYVJF9x46MKv+EgKRAPEA0RxXIQAVj2zFiZXSZMIcpSDlpOuKZWcp\nw7y1PIVMrO9MRGC13u8v1F5GQmBUnd/NIPikghfFWkcPSBylhsOkB6l69xoW+ym+\nx+LbaeEzAgMBAAECggEAP0MBzJuhtvIgjz1fsWJUWDTt/dYptsJu2YzipHrx7tOi\nD43dvF/TR4dWIDsWwOkmI1L34sV9NDOhJi96sA3J9yiG9GCSEAAcjsTFVxBzDiNe\nlw69rPyzmUOqAIR1ZTWH09Mrryd9/fpEc2geSkT7aQQS6BOrHakACmsLKvQ353fg\nHrmEKqO7Kk+E1H51FOjV2RdXevASkc05vRosY/+IYqIJReau4eWCTkYfP1cQOwBa\nDYnzfcf6fD/irwG/E+bJXiY1kdRDl5BO4uoSdC/XBIBuQx4/SDtZclPfrxZpPoMB\nUEtLq4PV3R5SH8SKdgIi4SuhVOPeZrwMZE4tdfLbcQKBgQDVRxxVACKuPdegqF/r\nhHMStkSInQ1GbXbkwaO24scF+Lxc16r5/Tl649hMhHsSGZbaNqnhdInVOZP9np/4\ncizCkVcpaf8Rz/xBh3TSXlz5RlT+6eZxt7Kk/VK7dTABoAbkfWlxGuBrWpnjs4/H\nObTEvYlTeG3EdQP+kJemrRkW+QKBgQDR+BghyBg79rfdjyvak+cxMXVq3XIsJIML\ncZyuW7m1nB1ayPrp1dVCFdivmrPsdWCjKeUzprQRkjdvjYUFn1ItcHUPNoAKqNwc\nRxplVIa0YqKcR6ko6imMv0Z/xyT3UR5YOGl9rZrgHLivKQ4akfP3f4qcjtTdR2Gq\n3meEsC+oiwKBgQC12Cm596GaOrRNEQKnxohu3eVVLcMR12dV6Bx0ZKsY1lmUN3Za\nK6QEuZvEsfhVGGhcqdrylfCnUq5xwfvXU1ICmvVcJDoMr+7+2EWs0DQpfeQebMPF\nFcFFl5AgsOw7lnwJ+Twb6bSLE/a+BG2Eihks3gXmm3nL1ZGQTSxgOpp30QKBgFe+\nQH9ledMdH+rjmKTn59Yj3/h/f+W4gFa47IvkYu/kxFOa51fudwb90CZaFNQ8nNyy\ndkimYltxad8hGbSmxpWciB6KXOmXdRwQDpTHxN7+1QtP2v3xFNnvWMuu8eC0MmUV\ndegCM1VySy9PjchGs9f6oXcZLRUnbkYUWNgXNGNPAoGBAK+NCDVwvD3zNEQowpg+\ncxno9BPhpIUcRNly66yHKkJdtwB4+Bc6JYwJrzDPLtqiIijTC2j9lZ4lLEhwTOaY\nh6Dkc7kUFMamvDdcDee+EXOgF5c3D9uxpkJeiy3aP4p3SABCnDJJpZiIzIAkx6vG\nN75NZcSKiIWipXHSAOSWEC+q\n-----END PRIVATE KEY-----\n",
+  "client_email": "socialmediabookapp@socialmediabookapp.iam.gserviceaccount.com",
+  "client_id": "112916422455448008436",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/socialmediabookapp%40socialmediabookapp.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

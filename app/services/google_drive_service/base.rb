@@ -19,6 +19,7 @@ module GoogleDriveService
         json_key_io: File.open('config/google_drive_service_api_key.json'),
         scope: DRIVE_SCOPE
       )
+
       authorizer.fetch_access_token!
       service.authorization = authorizer
 

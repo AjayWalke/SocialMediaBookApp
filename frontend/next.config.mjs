@@ -3,7 +3,7 @@
 
 const nextConfig = {
   images: {
-    domains: ['drive.google.com'],
+    domains: ['drive.google.com', 'cdn.pixabay.com'],
   },
 };
 

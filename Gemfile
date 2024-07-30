@@ -43,6 +43,7 @@ gem "bootsnap", require: false
 
 # To use google services
 gem 'google_drive'
+gem 'googleauth'
 gem 'google-apis-drive_v3'
 gem 'dotenv-rails', groups: [:development, :test, :production]
 

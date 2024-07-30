@@ -45,6 +45,9 @@
 .postFooter {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .avatar_container {
@@ -62,3 +65,15 @@
   font-weight: bold;
   font-size: 18px;
 }
+
+.post_span_comment_container {
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+} 
+
+.post_span_comment_container :hover {
+  color: blue;
+  cursor: pointer;
+  font-weight: bold;
+} 

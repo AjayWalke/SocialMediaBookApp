@@ -15,7 +15,7 @@ module Api
       private
 
       def set_payload
-        @payload = payload.permit(:like_id).to_h
+        @payload = params.permit(:like_id).to_h
       end
 
       def render_response(result)

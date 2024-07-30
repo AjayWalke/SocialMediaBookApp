@@ -1,0 +1,52 @@
+.sub_comment_main_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sub_comment_profile_container {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 20px; 
+  height: 20px;
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.sub_comment_container {
+  color: black;
+  height: min-content;
+  max-width: 50%;
+  padding: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-top: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub_comment_msg_container {
+  font-style: italic;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.sub_comment_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  font-size: small;
+}
+
+.child_count {
+  margin: 10px;
+}
+
+.like_count {
+  margin: 10px;
+}

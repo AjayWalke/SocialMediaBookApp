@@ -1,0 +1,84 @@
+.comment_main_container {
+  display: flex;
+  flex-direction: column;
+  height: 350px; 
+  width: 500px; 
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  border-radius: 8px;
+  overflow: hidden; 
+  position: relative; 
+  background-color: #fff; 
+}
+
+.back_button_container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  border-radius: 50%;
+  width: 40px; 
+  height: 40px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back_button_container :hover {
+  position: absolute;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 35px; 
+  height: 35px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment_container {
+  flex: 1;
+  overflow-y: auto; 
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.input_comment {
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-input {
+  width: 80%;
+  height: 30%;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.comment-input:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+  outline: none;
+}
+
+.comment-input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}

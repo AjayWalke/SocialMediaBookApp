@@ -344,6 +344,7 @@ DEPENDENCIES
   dotenv-rails
   google-apis-drive_v3
   google_drive
+  googleauth
   importmap-rails
   jbuilder
   kredis

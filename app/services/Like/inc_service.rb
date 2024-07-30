@@ -12,7 +12,8 @@ class Like::IncService < ApplicationService
 
       result.update(
         success: true,
-        message: 'Like count is increased'
+        message: 'Like count is increased',
+        like_count: @like.count
       )
     rescue => error
       result.update(

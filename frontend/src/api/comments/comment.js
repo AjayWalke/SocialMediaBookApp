@@ -1,3 +1,4 @@
+import { comment } from "postcss";
 import { baseURL, productionURL, apiEndpointV0 } from "../base"
 
 export const getAllPostComments = async ({ post_id }) => {
@@ -27,14 +28,22 @@ export const getAllPostComments = async ({ post_id }) => {
   }
 }
 
-export const createNewComment = async ({ data }) => {
+export const createNewComment = async ({ postId, newComment, parentId, dateOfPost }) => {
   try {
+    const payload = {
+      post_id: postId,
+      parent_id: parentId,
+      comment_msg: newComment,
+      date_of_post: dateOfPost
+    }
+
+    console.log(payload)
     const response = await fetch(`${baseURL}${apiEndpointV0}comments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ data }),
+      body: JSON.stringify(payload),
     });
 
     const normalise_response = await response.json()

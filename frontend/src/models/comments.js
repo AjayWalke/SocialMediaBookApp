@@ -12,45 +12,72 @@ export default function Comments({ post_id, parent_id, comments }) {
   const [parentId, setParentId] = useState(parent_id)
   const [allComments, setAllComments] = useState(comments)
   const [newComment, setNewComment] = useState('')
-  const [flag, setFlag] = useState(false)
+  const [commentHistory, setCommentHistory] = useState([{post_id: post_id, parent_id: parent_id}])
+  console.log("post_id", post_id, "parent_id", parent_id, allComments)
+  console.log("commentHistroy", commentHistory)
+
+  const changeState = (idx) => {
+    const last = commentHistory.slice(idx)[0]
+    setParentId(last.parent_id);
+    setAllComments(last.post_id);
+    console.log("last:", last)
+  }
 
   const handlePrevCommentState = () => {
-    setParentId(parent_id)
-    setAllComments(null)
+    commentHistory.pop();
+    changeState(-2);
+    setCommentHistory([...commentHistory]);
   }
 
   const handleCommentSubmit = async () => {
     const currentDate = new Date();
     const dateOfPost = currentDate.toISOString();
-    createNewComment({ postId, newComment, parentId, dateOfPost })
-    setFlag(!flag)
-    setNewComment('')
+    if(!parentId)
+      await createNewComment({ postId, newComment, dateOfPost })
+    else
+      await createNewComment({ newComment, parentId, dateOfPost })
   }
 
-  const syncComments = () => {
+  const syncComments = async () => {
+    console.log(`post_id : ${postId} parent_id : ${parentId}`)
     if(!parentId) {
-      const comments = getAllPostComments({ post_id })
+      const comments = await getAllPostComments({ post_id: postId })
       setAllComments(comments)
     }
     else {
-      const comments = getAllChildComments({ parent_id })
+      const comments = await getAllChildComments({ parent_id: parentId })
       setAllComments(comments)
     }
+    return allComments
   }
 
+  const handleSubCommentChange = (comment) => {
+    const newParentId = comment?.id
+    const prev_post_id = null
+    console.log("before parent_id: ", parentId, prev_post_id, commentHistory)
+    setCommentHistory(prevHistory => [
+      ...prevHistory,
+      { post_id: prev_post_id, parent_id: newParentId }
+    ]);
+    console.log("after new parent_id: ", newParentId, prev_post_id, commentHistory)
+  };
+
   useEffect(() => {
-    syncComments
-  }, [flag])
+    changeState(-1)
+    syncComments()
+  }, [commentHistory, postId, parentId])
 
   return (
     <div className="comment_main_container">
-      <div className="back_button_container" onClick={handlePrevCommentState}>
-        <FontAwesomeIcon icon={faArrowLeft} size="lg" />  
-      </div>
+      {
+        parentId && <div className="back_button_container" onClick={handlePrevCommentState}>
+          <FontAwesomeIcon icon={faArrowLeft} size="lg" />  
+        </div>
+      }
       <div className="comment_container">
         {
-          allComments.length > 0 && allComments.map((comment) => (
-            <SubComment comment={comment}/>
+          allComments && allComments.length > 0 && allComments.map((comment) => (
+            <SubComment comment={comment} onSubCommentChange={handleSubCommentChange}/>
           ))
         }
       </div>

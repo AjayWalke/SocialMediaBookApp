@@ -44,9 +44,23 @@
 }
 
 .child_count {
-  margin: 10px;
+  padding: 10px;
+}
+
+.child_count:hover {
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .like_count {
-  margin: 10px;
+  padding: 10px;
+}
+
+.like_count:hover {
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
 }

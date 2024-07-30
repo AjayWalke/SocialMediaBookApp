@@ -10,6 +10,7 @@ import { increaseLikeCount } from "@/api/like/like";
 import LikeIcon from "../ui/like-icon.svg";
 import CommentIcon from "../ui/comment-icon.svg";
 import Comments from "./comments";
+import getUiCommentText from "@/components/commentText";
 
 export default function Post({ post }) {
   const [commentCounts, setCommentCounts] = useState(0)
@@ -23,21 +24,6 @@ export default function Post({ post }) {
     const date = new Date(dateString);
     return new Intl.DateTimeFormat('en-US', options).format(date);
   };
-
-  const getUiCommentText = () => {
-    if(showComment) {
-      return `Hide Comments`
-    }
-    else {
-      const total = comments?.length
-      if(total > 0) {
-        return `Show ${total} Comments`
-      }
-      else {
-        return `Comments`
-      }
-    }
-  }
 
   const showCommentsCount = async (post_id) => {
     const data = await getAllPostComments({ post_id })
@@ -96,7 +82,7 @@ export default function Post({ post }) {
       }
       <div className="postFooter">
         <span><b>Posted at:</b> {formatDate(post?.date_of_post)}</span>
-        <div className="post_span_comment_container" onClick={handleShowComment}><Image src={CommentIcon} width={15} height={15}/> {getUiCommentText()} </div>
+        <div className="post_span_comment_container" onClick={handleShowComment}><Image src={CommentIcon} width={15} height={15}/> {getUiCommentText(comments?.length, showComment)} </div>
         <span onClick={handleLikeCount}><Image src={LikeIcon} width={15} height={15}/> {like} Likes</span>
       </div>
       {

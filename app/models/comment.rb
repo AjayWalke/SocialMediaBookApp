@@ -36,6 +36,7 @@ class Comment < ApplicationRecord
   def self.fetch_child_comments(parent_id:)
     Comment
       .joins("LEFT JOIN comments AS child_comments ON comments.id = child_comments.parent_id")
+      .joins(like_associations: :like)
       .where(parent_id: parent_id)
       .order(:date_of_post)
       .select(
@@ -43,9 +44,15 @@ class Comment < ApplicationRecord
         'comments.parent_id',
         'comments.comment_msg',
         'comments.date_of_post',
+        'likes.count as like_count',
+        'likes.id as like_id',
         'COUNT(child_comments.id) AS child_comments_count'
       )
-      .group(:id)
+      .group(
+        :id,
+        'likes.id',
+        "likes.count"
+      )
       .order(:date_of_post)
   end
 

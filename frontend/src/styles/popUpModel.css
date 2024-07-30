@@ -4,11 +4,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1000; 
 }
 
 .popup_model_content {
@@ -18,15 +18,16 @@
   width: 80%;
   max-width: 500px;
   position: relative;
-  color: black
+  color: black;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .popup_model_closebutton {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 1px;
-  height: 1px;
+  width: 24px; 
+  height: 24px; 
   border-radius: 50%;
   background: #f0f0f0;
   border: 1px solid #ddd;
@@ -42,4 +43,3 @@
 .popup_model_closebutton:hover {
   background: #e0e0e0;
 }
-

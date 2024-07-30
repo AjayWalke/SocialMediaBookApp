@@ -17,7 +17,7 @@ const PostButton = () => {
   };
 
   return (
-    <div>
+    <div className='create_new_post_container1'>
       <div className="newPostButton" onClick={openModal}>
         <span className="plusSymbol">+</span>
         <span className="newPostText">New Post</span>

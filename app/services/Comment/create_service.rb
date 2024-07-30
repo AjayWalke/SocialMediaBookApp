@@ -33,8 +33,10 @@ class Comment::CreateService < ApplicationService
   private
 
   def validate_post_details
-    @post = Post.find(@post_id)
-    raise 'Invalid Post' unless @post.present?
+    @post = Post.find_by(id: @post_id)
+    if @parent_id.nil?
+      raise 'Invalid Post' unless @post.present?
+    end
 
     raise 'Invalid Comment Msg' unless @comment_msg.present?
   end

@@ -1,8 +1,6 @@
 "use client";
 import Post from "@/models/post";
 import "../../styles/homeContainer/homeContainer.css"
-import Upload from "@/models/upload";
-import PostButton from "@/ui/postButton/postButton";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -14,12 +12,10 @@ export default function HomeBase() {
   const userData = useSelector((state) => state.user.user)
   const router = useRouter();
   const [examplePost, setExamplePost] = useState([]);
-  console.log(examplePost)
   
   const fetch = async () => {
     const user_id = userData?.id;
     const posts = await getAllPost({ user_id })
-    console.log(posts)
     setExamplePost(posts)
   }
 
@@ -39,9 +35,6 @@ export default function HomeBase() {
           <Post post={post}/>
         ))
       }
-      <div>
-        <PostButton/>
-      </div>
     </div>
   );
 }

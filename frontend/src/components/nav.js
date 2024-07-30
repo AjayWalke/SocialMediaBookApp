@@ -4,8 +4,18 @@ import Image from 'next/image';
 import Logo from "../ui/app_logo.svg"
 import Logout from "../ui/logout-icon.svg"
 import React from "react";
+// import HandleLogOut from "./handleLogout";
+import { useDispatch } from "react-redux";
+import { clearUserDetails } from "../stores/main_home/login"
 
 export default function Nav({ userData }) {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(clearUserDetails());
+    window.location.reload()
+  }
+
   return (
     <nav>
       <ul>
@@ -32,8 +42,8 @@ export default function Nav({ userData }) {
         </div>
         <div className="rightNav">
           <div className="sub_rightNav">
-            <span>Hi, {userData.name}! </span>
-            <div className="image"><Image src={Logout} width={40} height={40}/></div>
+            <span>Hi, {userData?.name}! </span>
+            <div className="image" onClick={handleLogout}><Image src={Logout} width={40} height={40}/></div>
           </div>
         </div>
       </ul>

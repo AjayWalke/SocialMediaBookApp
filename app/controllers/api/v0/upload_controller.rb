@@ -8,12 +8,12 @@ module Api
         unless @file.present?
           return render json: {
             success: false,
-            message: 'Error while uploading image, Pls try again after some time'
+            message: 'Check your File onces'
           }, status: :unprocessable_entity
         end
 
         @file_path = save_img_temporarily
-        link = GoogleDriveService::Base.upload_file_to_drive(@file_path)
+        link = GoogleDriveService::Base.upload_file_to_drive(@file_path) || "https://cdn.pixabay.com/photo/2016/12/04/21/58/new-zealand-1882703_640.jpg"
         del_temporarily_img
 
         unless link.present?

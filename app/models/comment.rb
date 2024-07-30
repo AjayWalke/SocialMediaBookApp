@@ -21,13 +21,14 @@ class Comment < ApplicationRecord
        'comments.date_of_post',
        'comment_association.post_id',
        'likes.count as like_count',
+       "likes.id as like_id",
        'COUNT(child_comments.id) AS child_comments_count'
       )
       .group(
         "comments.id",
         "comment_association.post_id",
-        "likes.id as like_id",
-        "likes.count"
+        "likes.count",
+        "likes.id"
       )
       .order(:date_of_post)
   end

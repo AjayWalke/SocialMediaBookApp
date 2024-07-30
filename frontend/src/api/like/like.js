@@ -1,9 +1,9 @@
 import { baseURL, productionURL, apiEndpointV0 } from "../base"
 
-export const increaseLikeCount = async ({ like_id }) => {
+export const increaseLikeCount = async ({ likeId }) => {
   try {
     const queryParams = new URLSearchParams({
-      like_id: like_id
+      like_id: likeId
     }).toString();
 
     const response = await fetch(`${baseURL}${apiEndpointV0}likes/inc?${queryParams}`, {
@@ -16,7 +16,7 @@ export const increaseLikeCount = async ({ like_id }) => {
     const normalise_response = await response.json()
 
     if(response.ok) {
-      return normalise_response?.data
+      return normalise_response?.like_count
     }
     else {
       alert(normalise_response?.message)

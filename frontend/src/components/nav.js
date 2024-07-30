@@ -3,14 +3,9 @@ import "../styles/navBar/navBar.css"
 import Image from 'next/image';
 import Logo from "../ui/app_logo.svg"
 import Logout from "../ui/logout-icon.svg"
+import React from "react";
 
-export default function Nav() {
-  const name = "Ajay Walke"
-
-  const handleLogout = () => {
-
-  }
-
+export default function Nav({ userData }) {
   return (
     <nav>
       <ul>
@@ -37,7 +32,7 @@ export default function Nav() {
         </div>
         <div className="rightNav">
           <div className="sub_rightNav">
-            <span>Hi, {name}! </span>
+            <span>Hi, {userData.name}! </span>
             <div className="image"><Image src={Logout} width={40} height={40}/></div>
           </div>
         </div>

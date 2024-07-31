@@ -76,7 +76,7 @@ export const getAllChildComments = async ({ parent_id }) => {
     const normalise_response = await response.json()
 
     if(response.ok) {
-      return normalise_response?.data
+      return { data: normalise_response?.data, parentMsg: normalise_response?.parent_msg }
     }
     else {
       alert(normalise_response?.message)

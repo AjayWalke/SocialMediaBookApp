@@ -13,14 +13,12 @@ export default function Comments({ post_id, parent_id, comments }) {
   const [allComments, setAllComments] = useState(comments)
   const [newComment, setNewComment] = useState('')
   const [commentHistory, setCommentHistory] = useState([{post_id: post_id, parent_id: parent_id}])
-  console.log("post_id", post_id, "parent_id", parent_id, allComments)
-  console.log("commentHistroy", commentHistory)
+  const [prevParentMsg, setPrevParentMsg] = useState('')
 
   const changeState = (idx) => {
     const last = commentHistory.slice(idx)[0]
     setParentId(last.parent_id);
     setAllComments(last.post_id);
-    console.log("last:", last)
   }
 
   const handlePrevCommentState = () => {
@@ -39,14 +37,14 @@ export default function Comments({ post_id, parent_id, comments }) {
   }
 
   const syncComments = async () => {
-    console.log(`post_id : ${postId} parent_id : ${parentId}`)
     if(!parentId) {
       const comments = await getAllPostComments({ post_id: postId })
       setAllComments(comments)
     }
     else {
-      const comments = await getAllChildComments({ parent_id: parentId })
-      setAllComments(comments)
+      const { data, parentMsg } = await getAllChildComments({ parent_id: parentId })
+      setAllComments(data)
+      setPrevParentMsg(parentMsg)
     }
     return allComments
   }
@@ -54,12 +52,10 @@ export default function Comments({ post_id, parent_id, comments }) {
   const handleSubCommentChange = (comment) => {
     const newParentId = comment?.id
     const prev_post_id = null
-    console.log("before parent_id: ", parentId, prev_post_id, commentHistory)
     setCommentHistory(prevHistory => [
       ...prevHistory,
       { post_id: prev_post_id, parent_id: newParentId }
     ]);
-    console.log("after new parent_id: ", newParentId, prev_post_id, commentHistory)
   };
 
   useEffect(() => {
@@ -69,12 +65,16 @@ export default function Comments({ post_id, parent_id, comments }) {
 
   return (
     <div className="comment_main_container">
-      {
-        parentId && <div className="back_button_container" onClick={handlePrevCommentState}>
-          <FontAwesomeIcon icon={faArrowLeft} size="lg" />  
-        </div>
-      }
       <div className="comment_container">
+        {
+          parentId && 
+          <div className="pre_post_container">
+            <div className="back_button_container" onClick={handlePrevCommentState}>
+              <FontAwesomeIcon icon={faArrowLeft} size="lg" />  
+            </div>
+            <div className="prev_post_msg">{prevParentMsg}</div>
+          </div>
+        }
         {
           allComments && allComments.length > 0 && allComments.map((comment) => (
             <SubComment comment={comment} onSubCommentChange={handleSubCommentChange}/>

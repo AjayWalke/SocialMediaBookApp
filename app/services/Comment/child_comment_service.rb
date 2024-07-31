@@ -13,7 +13,8 @@ class Comment::ChildCommentService < ApplicationService
       result.update(
         success: true,
         message: 'All Comments Fetched Successfully',
-        data: @comments
+        data: @comments,
+        parent_msg: @parent.comment_msg
       )
     rescue => error
       result.update(

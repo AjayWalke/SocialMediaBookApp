@@ -2,14 +2,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 20%;
-  margin-top: 3%;
+  position: fixed; 
+  top: 0; 
+  left: 20%; 
   padding: 20px;
-  width: 60%;
-  height: 100%;
+  width: 60%; 
+  height: 100vh;
   background-color: #f9f9f9ea;
   border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; 
+  margin-top: 50px;
+}
+
+.homeBaseContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .main_app {

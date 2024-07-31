@@ -2,6 +2,8 @@
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
+fronend : https://social-media-book-app.vercel.app/
+backend : (db + api service) : https://socialmediabookappprod.onrender.com
 
 Things you may want to cover:
 

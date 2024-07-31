@@ -32,7 +32,7 @@ export default function HomeBase() {
     <div className="homeBaseContainer">
       {
         examplePost.length > 0 && examplePost.map((post) => (
-          <Post post={post}/>
+          <Post key={post.id} post={post}/>
         ))
       }
     </div>

@@ -10,7 +10,7 @@ export default function AppLogo() {
         width={800}
         height={600}
       />
-      <div style={{marginLeft: '300px'}}><i><b>It's Time For New Media Platform</b></i></div>
+      <div style={{marginLeft: '300px'}}><i><b>Now Time For New Media Platform</b></i></div>
     </div>
   );
 }

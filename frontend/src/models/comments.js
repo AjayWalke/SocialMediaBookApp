@@ -77,7 +77,7 @@ export default function Comments({ post_id, parent_id, comments }) {
         }
         {
           allComments && allComments.length > 0 && allComments.map((comment) => (
-            <SubComment comment={comment} onSubCommentChange={handleSubCommentChange}/>
+            <SubComment key={comment.id} comment={comment} onSubCommentChange={handleSubCommentChange}/>
           ))
         }
       </div>

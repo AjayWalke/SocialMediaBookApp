@@ -1,5 +1,5 @@
 'use client';
-import AboutUsBase from "@/pages/aboutUs/aboutUsBase";
+import AboutUsBase from "@/common_pages/aboutUs/aboutUsBase";
 import Nav from "@/components/nav";
 import { useSelector } from "react-redux";
 

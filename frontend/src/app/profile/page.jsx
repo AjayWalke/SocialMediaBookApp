@@ -1,5 +1,5 @@
 'use client';
-import ProfileBase from "@/pages/profile/profileBase";
+import ProfileBase from "@/common_pages/profile/profileBase";
 import Image from "next/image";
 import "../../styles/profile/profile.css"
 import Nav from "@/components/nav";

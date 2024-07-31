@@ -12,7 +12,7 @@ export default function ProfileBase() {
       <div className="image_container">
         <div className="profile_image">
           <ProfilePic name={profile.name}/>
-          <span className="profile_name">{ profile.name }</span>
+          <div className="profile_name"><span>{ profile.name }</span></div>
         </div>
       </div>
       <div className="details_container">

@@ -42,8 +42,9 @@
 
 .profile_name {
   font-weight: bold;
-  padding-left: 100px;
-  padding-right: 200px;
-  margin-top: 40px;
+  margin-top: 10px;
   font-size: xx-large;
+  width: 15%;
+  height: 5%;
+  text-align: center;
 }

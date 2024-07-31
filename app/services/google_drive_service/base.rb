@@ -25,14 +25,19 @@ module GoogleDriveService
 
       service
     end
+
     def self.get_web_link(file_id)
       "https://drive.google.com/thumbnail?id=#{file_id}"
+    end
+    
+    def generate_number
+      rand(1...1000).to_s
     end
 
     def self.upload_file_to_drive(file_path, folder_id = DEFAULT_FOLDER)
       service = get_service
       file_metadata = {
-        name: File.basename(file_path),
+        name: File.basename(file_path) + rand(1...1000).to_s,
         mime_type: 'image/jpeg'
       }
       file = service.create_file(

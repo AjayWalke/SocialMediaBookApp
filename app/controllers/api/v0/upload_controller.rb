@@ -13,7 +13,7 @@ module Api
         end
 
         @file_path = save_img_temporarily
-        link = GoogleDriveService::Base.upload_file_to_drive(@file_path) || "https://cdn.pixabay.com/photo/2016/12/04/21/58/new-zealand-1882703_640.jpg"
+        link = GoogleDriveService::Base.upload_file_to_drive(@file_path)
         del_temporarily_img
 
         unless link.present?

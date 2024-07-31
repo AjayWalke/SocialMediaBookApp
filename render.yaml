@@ -1,0 +1,20 @@
+databases:
+  - name: SocialMediaBookApp_1
+    databaseName: SocialMediaBookApp_1
+    user: SocialMediaBookApp_1
+    plan: free
+
+services:
+  - type: web
+    plan: free
+    name: SocialMediaBookApp_1
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: SocialMediaBookApp_1
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false

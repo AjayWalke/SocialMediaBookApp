@@ -45,7 +45,7 @@ gem "bootsnap", require: false
 gem 'google_drive'
 gem 'googleauth'
 gem 'google-apis-drive_v3'
-gem 'dotenv-rails', groups: [:development, :test, :production]
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'rack-cors', require: 'rack/cors'
 

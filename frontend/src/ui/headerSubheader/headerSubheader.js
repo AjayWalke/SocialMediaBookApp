@@ -12,8 +12,8 @@ export default function HeaderSubheader({ header, data }) {
       </div>
       <div className="subheader_container2">
         {
-          filteredEntries.map(([key, value]) => (
-            <div className="data_container">
+          filteredEntries.map(([key, value], index) => (
+            <div key={index} className="data_container">
               <span className="data_key">{key.toUpperCase()}: </span>
               <span className="data_value">{value}</span>
             </div>

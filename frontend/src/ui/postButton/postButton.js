@@ -3,7 +3,7 @@ import { useState } from 'react';
 import React from 'react';
 import "./postButton.css";
 import PopUpModel from '@/components/popUpModel';
-import CreateNewPost from '@/pages/home/createNewPost';
+import CreateNewPost from '@/common_pages/home/createNewPost';
 
 const PostButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

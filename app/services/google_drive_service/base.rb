@@ -15,8 +15,9 @@ module GoogleDriveService
       service = Google::Apis::DriveV3::DriveService.new
       service.client_options.application_name = APP_NAME
 
+      credentials_json = ENV['GOOGLE_API_KEY']
       authorizer = Google::Auth::ServiceAccountCredentials.make_creds(
-        json_key_io: File.open('config/google_drive_service_api_key.json'),
+        json_key_io: StringIO.new(credentials_json),
         scope: DRIVE_SCOPE
       )
 

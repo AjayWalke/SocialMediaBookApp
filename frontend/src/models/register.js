@@ -23,7 +23,7 @@ export default function Register({ setState }) {
       alert('Password Didn\'t match')
     }
 
-    sendNewRegistration({username, name, address, email, password})
+    await sendNewRegistration({username, name, address, email, password})
     window.location.reload();
   };
 

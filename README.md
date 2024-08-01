@@ -4,8 +4,18 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 
-# fronend : https://social-media-book-app.vercel.app/
+# frontend : https://social-media-book-app.vercel.app/
 # backend : (db + api service) : https://socialmediabookappprod.onrender.com
+
+
+# Testing purpose:
+username: ajaywalke49@gmail.com
+password: 12345
+
+
+#deployment links:
+backend: https://dashboard.render.com/web/srv-cql71lij1k6c73cej9k0/deploys/dep-cqljub08fa8c73fch1s0
+frontend: https://vercel.com/ajays-projects-3bdcc0da/social-media-book-app
 
 Things you may want to cover:
 

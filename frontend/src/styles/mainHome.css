@@ -45,3 +45,29 @@ h2 {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .main_home_container {
+    flex-direction: column;
+  }
+
+  .main_home_app_logo_container,
+  .main_home_app_page_container {
+    flex: 1;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .main_home_app_logo_container img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .hover_underline {
+    margin-left: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 15px 0;
+  }
+}

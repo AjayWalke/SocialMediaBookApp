@@ -49,12 +49,14 @@ li {
   flex-direction: row;
 }
 
-.sub_rightNav span {
-  justify-content: center;
-  margin-top: 13px;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bolder;
-  padding-right: 20px;
+@media (min-width: 768px) {
+  .sub_rightNav span {
+    justify-content: center;
+    margin-top: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    padding-right: 20px;
+  }
 }
 
 .image {
@@ -89,4 +91,66 @@ a:hover {
 .avatar_letter {
   font-weight: bold;
   font-size: 18px;
+}
+
+.app_logo_container {
+  margin-left: 300px;
+}
+
+@media (max-width: 768px) {
+  .app_logo_container {
+    /* text-align: center; */
+    margin-left: 3px;
+  }
+  .app_logo_img_container {
+    margin-left: 50px;
+  }
+  nav {
+    margin-right: 10px;
+    /* padding: 10px; */
+    font-size: smaller;
+  }
+
+  ul {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .leftLogoNav {
+    margin: 1px 0;
+  }
+
+  .leftLogoNav li{
+    margin: 1px 0;
+  }
+
+  .leftNav, .rightNav {
+    margin: 0;
+  }
+
+  .leftNav li {
+    padding: 0 1em;
+    margin: 0;
+  }
+
+  .rightNav {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .right_nav_span {
+    margin-top: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: small;
+    padding-top: 5px;
+  }
+
+  .sub_rightNav {
+    padding: 0;
+  }
+
+  .app_name_container {
+    display: none;
+  }
 }

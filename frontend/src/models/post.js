@@ -73,11 +73,10 @@ export default function Post({ post }) {
       </div>
       {
         post?.image_link && 
-        <Image 
+        <img 
           src={post?.image_link}
-          height={300}
-          width={500}
           alt='Loading....'
+          className="post_image_container"
         />   
       }
       <div className="postFooter">

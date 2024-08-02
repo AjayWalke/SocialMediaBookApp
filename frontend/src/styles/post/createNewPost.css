@@ -84,3 +84,10 @@ button:hover {
 .upload_text:hover {
   color: #007bff;
 }
+
+@media (max-width: 768px) {
+  .upload_container input {
+    height: 10%;
+    width: 80%;
+  }
+}

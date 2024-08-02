@@ -1,16 +1,18 @@
+@media (min-width: 768px) {
 .postContainer {
-  margin-bottom: 30px;
-  margin-top: 20px;
-  padding-left: 4%;
-  padding-right: 4%;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: min-content;
-  height: min-content;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: min-content;
+    height: min-content;
+  }
 }
 
 .userProfileContainer {
@@ -79,3 +81,25 @@
   cursor: pointer;
   font-weight: bold;
 } 
+
+@media (max-width: 768px) {
+  .postContainer {
+      margin-bottom: 30px;
+      margin-top: 20px;
+      padding-left: 4%;
+      padding-right: 4%;
+      padding-top: 3%;
+      padding-bottom: 3%;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      height: auto;
+    }
+
+    .post_image_container {
+      max-width: 100%;
+      min-height: 50%;
+    }
+  }

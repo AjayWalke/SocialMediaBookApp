@@ -27,7 +27,7 @@ export default function Nav({ userData }) {
               height={60}
             />
           </li>
-          <span><b>Social Media Book App</b></span>
+          <span className="app_name_container1"><b>Social Media Book App</b></span>
         </div>
         <div className="leftNav">
           <li>
@@ -42,7 +42,7 @@ export default function Nav({ userData }) {
         </div>
         <div className="rightNav">
           <div className="sub_rightNav">
-            <span>Hi, {userData?.name}! </span>
+            <span className="right_nav_span">Hi, {userData?.name}! </span>
             <div className="image" onClick={handleLogout}><Image src={Logout} width={40} height={40}/></div>
           </div>
         </div>

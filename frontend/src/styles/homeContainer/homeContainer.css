@@ -1,18 +1,20 @@
-.homeBaseContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed; 
-  top: 0; 
-  left: 20%; 
-  padding: 20px;
-  width: 60%; 
-  height: 100vh;
-  background-color: #f9f9f9ea;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; 
-  margin-top: 50px;
+@media (min-width: 768px) {
+  .homeBaseContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; 
+    top: 0; 
+    left: 20%; 
+    padding: 20px;
+    width: 60%; 
+    height: 100vh;
+    background-color: #f9f9f9ea;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; 
+    margin-top: 50px;
+  }
 }
 
 .homeBaseContainer::-webkit-scrollbar {
@@ -29,4 +31,24 @@
 
 .main_container {
   color: black;
+}
+
+@media (max-width: 768px) {
+  .homeBaseContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; 
+    top: 0; 
+    left: 3%;
+    right: 3%; 
+    padding: 20px;
+    /* width: 60%;  */
+    height: 100vh;
+    background-color: #f9f9f9ea;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; 
+    margin-top: 50px;
+  }
 }

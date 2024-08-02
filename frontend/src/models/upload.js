@@ -54,7 +54,7 @@ export default function Upload() {
           onChange={(e) => setPostMessage(e.target.value)}
         />
       </div>
-      <div>
+      <div className="upload_file_container">
         <h1 className="upload_heading">Upload Image</h1>
         <div className="upload_container">
           <input type="file" onChange={(e) => setFile(e.target.files[0])} />
